@@ -11,7 +11,7 @@ export async function fetchMarathons(): Promise<Marathon[]> {
     .eq('published', true)
     .order('event_date', { ascending: true });
   if (error) return localMarathons;
-  return (data ?? []) as Marathon[];
+  return data?.length ? (data as Marathon[]) : localMarathons;
 }
 
 export async function fetchAllMarathons(): Promise<Marathon[]> {
@@ -43,7 +43,7 @@ export async function fetchUpcoming(): Promise<UpcomingMarathon[]> {
     .eq('published', true)
     .order('event_date', { ascending: true });
   if (error) return localUpcoming;
-  return (data ?? []) as UpcomingMarathon[];
+  return data?.length ? (data as UpcomingMarathon[]) : localUpcoming;
 }
 
 export async function fetchAllUpcoming(): Promise<UpcomingMarathon[]> {
@@ -73,14 +73,14 @@ export async function fetchGallery(): Promise<GalleryItem[]> {
     .select('*, marathons(event_name)')
     .order('created_at', { ascending: false });
   if (error) return localGallery;
-  return (data ?? []) as GalleryItem[];
+  return data?.length ? (data as GalleryItem[]) : localGallery;
 }
 
 export async function fetchJourneySections(): Promise<JourneySection[]> {
   if (!isSupabaseConfigured) return localSections;
   const { data, error } = await supabase.from('journey_sections').select('*');
   if (error) return localSections;
-  return (data ?? []) as JourneySection[];
+  return data?.length ? (data as JourneySection[]) : localSections;
 }
 
 export async function fetchJourneySection(key: string): Promise<JourneySection | null> {

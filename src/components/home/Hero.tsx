@@ -19,8 +19,8 @@ export default function Hero() {
         style={{ y: imageY, scale: imageScale }}
       >
         <img
-          src="https://images.pexels.com/photos/35388271/pexels-photo-35388271.jpeg?auto=compress&cs=tinysrgb&w=1920"
-          alt="A runner on a mountain road at altitude"
+          src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=2000&q=88"
+          alt="Runner moving along a track"
           className="w-full h-full object-cover"
           loading="eager"
         />

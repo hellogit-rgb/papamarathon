@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollProgress from '@/components/ScrollProgress';
@@ -6,6 +6,12 @@ import HomePage from '@/pages/HomePage';
 import JourneyPage from '@/pages/JourneyPage';
 import MarathonsPage from '@/pages/MarathonsPage';
 import MarathonDetailPage from '@/pages/MarathonDetailPage';
+import GalleryPage from '@/pages/GalleryPage';
+import UpcomingPage from '@/pages/UpcomingPage';
+import AchievementsPage from '@/pages/AchievementsPage';
+import AdminLoginPage from '@/pages/AdminLoginPage';
+import AdminPage from '@/pages/AdminPage';
+import { AuthProvider } from '@/lib/auth';
 
 function NotFoundPage() {
   return (
@@ -21,17 +27,23 @@ function NotFoundPage() {
 function App() {
   return (
     <BrowserRouter>
-      <ScrollProgress />
-      <Navbar />
-      <Routes>
+      <AuthProvider>
+        <ScrollProgress />
+        <Navbar />
+        <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/journey" element={<JourneyPage />} />
         <Route path="/marathons" element={<MarathonsPage />} />
         <Route path="/marathons/:id" element={<MarathonDetailPage />} />
-        <Route path="/upcoming" element={<Navigate to="/" replace />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-      <Footer />
+        <Route path="/upcoming" element={<UpcomingPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/achievements" element={<AchievementsPage />} />
+          <Route path="/admin/login" element={<AdminLoginPage />} />
+          <Route path="/admin" element={<AdminPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+        <Footer />
+      </AuthProvider>
     </BrowserRouter>
   );
 }
