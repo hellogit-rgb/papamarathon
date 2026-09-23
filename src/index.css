@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@theme {
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-heading: 'Oswald', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+:root {
+  --color-ink: #0e0d0b;
+  --color-charcoal: #1a1815;
+  --color-stone: #2a2724;
+  --color-cream: #f5f1ea;
+  --color-bone: #e8e2d6;
+  --color-copper: #b87333;
+  --color-ember: #d4793a;
+  --color-moss: #6b7a4f;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #0e0d0b;
+  color: #f5f1ea;
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+}
+
+::selection {
+  background: #b87333;
+  color: #0e0d0b;
+}
+
+:focus-visible {
+  outline: 2px solid #d4793a;
+  outline-offset: 4px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0e0d0b;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2724;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b87333;
+}
+
+.font-display {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.02em;
+}
+.font-heading {
+  font-family: 'Oswald', sans-serif;
+}
+.font-body {
+  font-family: 'DM Sans', sans-serif;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.tracking-tighter-2 {
+  letter-spacing: -0.04em;
+}
+
+.bg-ink { background-color: #0e0d0b; }
+.bg-charcoal { background-color: #1a1815; }
+.bg-stone { background-color: #2a2724; }
+.bg-cream { background-color: #f5f1ea; }
+.bg-bone { background-color: #e8e2d6; }
+.bg-copper { background-color: #b87333; }
+.bg-ember { background-color: #d4793a; }
+.bg-moss { background-color: #6b7a4f; }
+
+.text-ink { color: #0e0d0b; }
+.text-charcoal { color: #1a1815; }
+.text-stone { color: #2a2724; }
+.text-cream { color: #f5f1ea; }
+.text-bone { color: #e8e2d6; }
+.text-copper { color: #b87333; }
+.text-ember { color: #d4793a; }
+.text-moss { color: #6b7a4f; }
+
+.border-stone { border-color: #2a2724; }
+.border-copper { border-color: #b87333; }
+
+.shadow-warm {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(14, 13, 11, 0.55) 0%,
+    rgba(14, 13, 11, 0.35) 40%,
+    rgba(14, 13, 11, 0.85) 100%
+  );
+}
+
+.section-fade {
+  background: linear-gradient(180deg, transparent 0%, #0e0d0b 12%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes scrollHint {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(8px); opacity: 1; }
+}
+.scroll-hint {
+  animation: scrollHint 2s ease-in-out infinite;
+}
+
+@keyframes pulseLine {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+.pulse-line {
+  animation: pulseLine 1.2s ease-out forwards;
+  transform-origin: left;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, #1a1815 25%, #2a2724 50%, #1a1815 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
