@@ -6,6 +6,7 @@ import Timeline from '@/components/home/Timeline';
 import Statistics from '@/components/home/Statistics';
 import FeaturedMarathon from '@/components/home/FeaturedMarathon';
 import UpcomingSection from '@/components/home/UpcomingSection';
+import TrainingForm from '@/components/home/TrainingForm';
 import Philosophy from '@/components/home/Philosophy';
 import PhotoJourney from '@/components/home/PhotoJourney';
 import Achievements from '@/components/home/Achievements';
@@ -42,8 +43,9 @@ export default function HomePage() {
       <JourneyStory sections={data.sections} />
       <Timeline marathons={data.marathons} />
       <Statistics marathons={data.marathons} />
-      <FeaturedMarathon marathons={data.marathons} />
       <UpcomingSection upcoming={data.upcoming} />
+      <TrainingForm />
+      <FeaturedMarathon marathons={data.marathons} />
       <Philosophy />
       <PhotoJourney gallery={data.gallery} />
       <Achievements achievements={data.achievements} />

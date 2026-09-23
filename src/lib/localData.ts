@@ -1,11 +1,12 @@
 import type { GalleryItem, JourneySection, Marathon, UpcomingMarathon } from './types';
 
 const images = [
-  'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=1600&q=85',
-  'https://images.unsplash.com/photo-1530137073521-cb7f6c7a0c29?auto=format&fit=crop&w=1200&q=85',
-  'https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1200&q=85',
-  'https://images.unsplash.com/photo-1504150558240-0b4fd8946624?auto=format&fit=crop&w=1200&q=85',
-  'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1200&q=85',
+  '/assets/photo6.png',
+  '/assets/photo4.png',
+  '/assets/photo3.png',
+  '/assets/photo7.png',
+  '/assets/photo2.jpeg',
+  '/assets/photo5.png',
 ];
 
 const base = (id: string, event_name: string, event_date: string, city: string, distance_km: number, distance_category: Marathon['distance_category'], featured_image: string, extra: Partial<Marathon> = {}): Marathon => ({

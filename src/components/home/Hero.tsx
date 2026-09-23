@@ -19,9 +19,9 @@ export default function Hero() {
         style={{ y: imageY, scale: imageScale }}
       >
         <img
-          src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=2000&q=88"
-          alt="Runner moving along a track"
-          className="w-full h-full object-cover"
+          src="/assets/homeimg.png"
+          alt="Deepesh running on an outdoor track"
+          className="w-full h-full object-cover object-[52%_38%]"
           loading="eager"
         />
       </motion.div>

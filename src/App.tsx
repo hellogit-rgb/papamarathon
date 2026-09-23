@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollProgress from '@/components/ScrollProgress';
+import ScrollToTop from '@/components/ScrollToTop';
+import BackgroundMusic from '@/components/BackgroundMusic';
 import HomePage from '@/pages/HomePage';
 import JourneyPage from '@/pages/JourneyPage';
 import MarathonsPage from '@/pages/MarathonsPage';
@@ -29,6 +31,8 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
         <ScrollProgress />
+        <ScrollToTop />
+        <BackgroundMusic />
         <Navbar />
         <Routes>
         <Route path="/" element={<HomePage />} />

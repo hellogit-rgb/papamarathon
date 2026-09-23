@@ -51,10 +51,14 @@ export default function Timeline({ marathons }: { marathons: Marathon[] }) {
                   <div className="bg-ink border border-stone/50 overflow-hidden transition-all duration-300 group-hover:border-copper/50">
                     {m.featured_image && (
                       <div className="aspect-[16/10] overflow-hidden">
-                        <img
+                        <motion.img
                           src={m.featured_image}
                           alt={m.event_name}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                          initial={{ scale: 1.12 }}
+                          whileInView={{ scale: 1 }}
+                          viewport={{ once: true, margin: '-120px' }}
+                          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
                           loading="lazy"
                         />
                       </div>
